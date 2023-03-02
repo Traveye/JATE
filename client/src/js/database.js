@@ -1,4 +1,5 @@
 import { openDB } from 'idb';
+import { header } from './header';
 
 const initdb = async () =>
   openDB('jate', 1, {
@@ -28,9 +29,10 @@ export const getDb = async () => {
   const tx = db.transaction('jate', 'readonly');
   const store = tx.objectStore('jate');
   const content = await store.getAll();
+  console.log(content)
   await tx.done;
   console.log('Content retrieved from database');
-  return content;
+  return content.content;
 };
 
 initdb();
