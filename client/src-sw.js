@@ -38,9 +38,9 @@ registerRoute(
       new ExpirationPlugin({
         maxAgeSeconds: 30 * 24 * 60 * 60,
       }),
-      new offlineFallback({
-        pageFallback: '/offline.html',
-      }),
+      // new offlineFallback({
+      //   pageFallback: '/offline.html',
+      // }),
     ],
   })
 );
